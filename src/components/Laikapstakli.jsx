@@ -2,10 +2,9 @@ import React from "react";
 
 const Laikapstakli = () => {
   return (
-    <div id="laikapstakli" className="max-w-[1400px] m-auto md:pl-20 p-4 py-16">
-      <h1 className="text-4xl font-bold text-center">Laika ziņas</h1>
-      <div>te būs baigi kruti laikapstākļi</div>
-      <p>
+    <div id="laikapstakli" className="max-w-[1400px] m-auto md:pl-20 p-4 mb-10">
+      <h1 className="text-4xl font-bold text-center mb-5">Laika ziņas</h1>
+      <p className="text-justify">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, fuga
         exercitationem modi obcaecati aperiam ipsa ut totam dignissimos saepe,
         enim aliquid id reprehenderit consequuntur illo, tempore necessitatibus
