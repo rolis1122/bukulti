@@ -9,12 +9,12 @@ const Main = () => {
         src="./image-3.jpg"
         alt="main photo"
       />
-      <div className="w-full h-screen absolute top-0 bg-gradient-to-r from-white/20">
+      <div className="w-full h-screen absolute top-0 ">
         <div className="m-auto h-full w-full flex flex-col justify-center items-center ">
-          <h1 className="flex justify-center items-centersm:text-5xl text-4xl font-extrabold text-gray-800 drop-shadow-md">
+          <h1 className="flex justify-center items-centersm:text-5xl text-4xl font-extrabold text-gray-100 drop-shadow-md">
             Šeit ir lieliski!
           </h1>
-          <h2 className="flex justify-center align-middle sm:text-3xl text-2xl font-extrabold text-gray-800 drop-shadow-lg">
+          <h2 className="flex justify-center align-middle sm:text-3xl text-2xl font-extrabold text-gray-200 drop-shadow-lg">
             Te
             <TypeAnimation
               sequence={[
