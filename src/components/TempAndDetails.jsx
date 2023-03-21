@@ -30,25 +30,25 @@ const TempAndDetails = () => {
   if (weather) {
     return (
       <>
-        <div className="flex items-center justify-center py-6 text-2xl text-cyan-300">
+        <div className="flex items-center justify-center text-2xl text-cyan-300">
           <p>{weather.weather[0].description}</p>
-        </div>
-        <div className="flex flex-row items-center justify-between py-3 mx-5 text-white">
           <img
-            className="h-24 w-24"
+            className="ml-2 flex items-center justify-center pt-2"
             src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`}
             alt=""
           />
-          <p className="text-5xl">{weather.main.temp}°C</p>
-          <div className="flex flex-col space-y-2">
-            <div className="flex font-light text-sm items-center justify-center">
+        </div>
+        <div className="flex flex-row items-center justify-center py-2 text-white">
+          <p className="text-5xl mr-2">{weather.main.temp}°C</p>
+          <div className="flex flex-col space-y-2 px-2">
+            <div className="flex font-light text-sm items-center justify-start">
               <UilTemperatureHalf size={18} className="mr-1" />
               Pēc čuja:
               <span className="font-medium ml-1">
                 {weather.main.feels_like}°C
               </span>
             </div>
-            <div className="flex font-light text-sm items-center justify-center">
+            <div className="flex font-light text-sm items-center justify-start">
               <UilTear size={18} className="mr-1" />
               Spiediens:
               <span className="font-medium ml-1">
