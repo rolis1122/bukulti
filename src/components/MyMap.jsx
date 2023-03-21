@@ -6,7 +6,7 @@ import "leaflet/dist/leaflet.css";
 const MyMap = () => {
   return (
     <MapContainer
-      className="w-[90%] h-[400px]"
+      className="w-[95%] h-[400px]"
       center={[57.0212, 24.2673]}
       zoom={13}
     >

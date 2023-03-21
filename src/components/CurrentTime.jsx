@@ -2,20 +2,20 @@ import React from "react";
 
 const CurrentTime = () => {
   const date = new Date();
-  const showTime = date.getHours() + ":" + date.getMinutes();
   const options = {
     weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
   };
 
-  const laiks = date.toLocaleString("lv-LV", options);
+  let laiks = date.toLocaleString("lv-LV", options);
+
   return (
-    <div className="flex items-center justify-center my-2">
-      <p className="text-white text-xl font-xl">
-        {laiks} {showTime}
-      </p>
+    <div className="flex items-center justify-center">
+      <p className="text-white text-md">{laiks}</p>
     </div>
   );
 };

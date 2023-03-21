@@ -7,52 +7,78 @@ const api = {
 };
 
 const Forecast = () => {
-  const [weather, setWeather] = useState({});
+  const [weather, setWeather] = useState(null);
   useEffect(() => {
-    fetch(`${api.base}forecast?q=Bukulti&units=metric&appid=${api.key}`)
+    fetch(`${api.base}forecast?q=Bukulti&units=metric&cnt=6&appid=${api.key}`)
       .then((response) => response.json())
       .then((data) => {
-        setWeather(data.main);
+        setWeather(data);
         // console.log(data);
         // console.log(weather);
       });
   }, []);
-
-  return (
-    <>
-      <div className="flex items-center justify-start my-6">
-        <p className="text-white font-medium"> 5 dienu prognoze</p>
-      </div>
-      <hr className="my-1" />
-      <div className="flex flex-row items-center justify-between text-white">
-        <div className="flex flex-col items-center">
-          <p className="font-light text-sm">1diena</p>
-          <p>kkāda bilde</p>
-          <p className="font-medium">22</p>
+  if (weather) {
+    return (
+      <>
+        <div className="flex items-center justify-start mt-5 mb-2 ml-2">
+          <p className="text-white font-medium"> tuvākās nākotnes prognoze:</p>
         </div>
-        <div className="flex flex-col items-center">
-          <p className="font-light text-sm">1diena</p>
-          <p>kkāda bilde</p>
-          <p className="font-medium">22</p>
+        <hr className="my-1" />
+        <div className="flex flex-row mx-2 items-center justify-between text-white">
+          <div className="flex flex-col items-center justify-center">
+            <p className="font-light text-[12px]">
+              {weather.list[1].dt_txt.slice(5, 16)}
+            </p>
+            <img
+              src={`http://openweathermap.org/img/w/${weather.list[1].weather[0].icon}.png`}
+              alt=""
+            />
+            <p className="text-md font-medium">{weather.list[1].main.temp}°C</p>
+          </div>
+          <div className="flex flex-col items-center justify-center">
+            <p className="font-light text-[12px]">
+              {weather.list[2].dt_txt.slice(5, 16)}
+            </p>
+            <img
+              src={`http://openweathermap.org/img/w/${weather.list[2].weather[0].icon}.png`}
+              alt=""
+            />
+            <p className="text-md font-medium">{weather.list[2].main.temp}°C</p>
+          </div>
+          <div className="flex flex-col items-center justify-center">
+            <p className="font-light text-[12px]">
+              {weather.list[3].dt_txt.slice(5, 16)}
+            </p>
+            <img
+              src={`http://openweathermap.org/img/w/${weather.list[3].weather[0].icon}.png`}
+              alt=""
+            />
+            <p className="text-md font-medium">{weather.list[3].main.temp}°C</p>
+          </div>
+          <div className="flex flex-col items-center justify-center">
+            <p className="font-light text-[12px]">
+              {weather.list[4].dt_txt.slice(5, 16)}
+            </p>
+            <img
+              src={`http://openweathermap.org/img/w/${weather.list[4].weather[0].icon}.png`}
+              alt=""
+            />
+            <p className="text-md font-medium">{weather.list[4].main.temp}°C</p>
+          </div>
+          <div className="flex flex-col items-center justify-center">
+            <p className="font-light text-[12px]">
+              {weather.list[5].dt_txt.slice(5, 16)}
+            </p>
+            <img
+              src={`http://openweathermap.org/img/w/${weather.list[5].weather[0].icon}.png`}
+              alt=""
+            />
+            <p className="text-md font-medium">{weather.list[5].main.temp}°C</p>
+          </div>
         </div>
-        <div className="flex flex-col items-center">
-          <p className="font-light text-sm">1diena</p>
-          <p>kkāda bilde</p>
-          <p className="font-medium">22</p>
-        </div>
-        <div className="flex flex-col items-center">
-          <p className="font-light text-sm">1diena</p>
-          <p>kkāda bilde</p>
-          <p className="font-medium">22</p>
-        </div>
-        <div className="flex flex-col items-center">
-          <p className="font-light text-sm">1diena</p>
-          <p>kkāda bilde</p>
-          <p className="font-medium">22</p>
-        </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  }
 };
 
 export default Forecast;

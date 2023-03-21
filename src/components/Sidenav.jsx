@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AiOutlineHome } from "react-icons/ai";
-import { TbSpeedboat, TbMenu2, TbDirections } from "react-icons/tb";
+import { TbSpeedboat, TbMenu2, TbDirections, TbFish } from "react-icons/tb";
 import { TiWeatherPartlySunny } from "react-icons/ti";
 import { MdOutlineBathtub, MdOutlineImportContacts } from "react-icons/md";
 
@@ -55,6 +55,14 @@ const Sidenav = () => {
           </a>
           <a
             onClick={handleNav}
+            href="#zives"
+            className="w-[50%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"
+          >
+            <TbFish size={30} />
+            <span className="pl-4">Zives</span>
+          </a>
+          <a
+            onClick={handleNav}
             href="#kontakti"
             className="w-[50%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"
           >
@@ -65,11 +73,11 @@ const Sidenav = () => {
       ) : (
         ""
       )}
-      <div className="md:block hidden fixed top-[10%] z-10">
+      <div className="md:block hidden fixed z-10">
         <div className="flex flex-col">
           <a
             href="#main"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
+            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover: hover:scale-110 ease-in duration-300"
           >
             <AiOutlineHome size={22} />
           </a>
@@ -90,6 +98,12 @@ const Sidenav = () => {
             className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
           >
             <TiWeatherPartlySunny size={23} />
+          </a>
+          <a
+            href="#zives"
+            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
+          >
+            <TbFish size={23} />
           </a>
           <a
             href="#kontakti"

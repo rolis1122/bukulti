@@ -4,6 +4,7 @@ import Kubls from "./components/Kubls";
 import Laiva from "./components/Laiva";
 import Laikapstakli from "./components/Laikapstakli";
 import Kontakti from "./components/Kontakti";
+import FishCard from "./components/FishCard";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Main />
       <Kubls />
       <Laiva />
+      <FishCard />
       <Laikapstakli />
       <Kontakti />
     </div>

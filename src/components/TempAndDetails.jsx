@@ -22,18 +22,27 @@ const TempAndDetails = () => {
       .then((response) => response.json())
       .then((data) => {
         setWeather(data);
-        console.log(data);
+        // console.log(data);
         // console.log(weather);
       });
   }, []);
 
   if (weather) {
+    let sunrise = new Intl.DateTimeFormat("lv-LV", {
+      hour: "2-digit",
+      minute: "2-digit",
+    }).format(weather.sys.sunrise * 1000);
+
+    let sunset = new Intl.DateTimeFormat("lv-LV", {
+      hour: "2-digit",
+      minute: "2-digit",
+    }).format(weather.sys.sunset * 1000);
+
     return (
       <>
-        <div className="flex items-center justify-center text-2xl text-cyan-300">
-          <p>{weather.weather[0].description}</p>
+        <div className="flex flex-wrap flex-row min-w-fit items-center justify-center text-2xl text-cyan-300">
+          <p className="mr-3">{weather.weather[0].description}</p>
           <img
-            className="ml-2 flex items-center justify-center pt-2"
             src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`}
             alt=""
           />
@@ -62,30 +71,17 @@ const TempAndDetails = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-row items-center justify-center space-x-2 text-white text-sm py-3">
+        <div className="flex flex-wrap flex-row items-center justify-center space-x-2 mx-2 text-white text-sm py-3">
           <UilSun />
           <p className="font-light">
-            Lec: <span className="font-medium ml-1">{weather.sys.sunrise}</span>
+            Lec: <span className="font-medium ml-1">{sunrise}</span>
           </p>
           <p>|</p>
           <UilSunset />
           <p className="font-light">
-            Riet: <span className="font-medium ml-1">{weather.sys.sunset}</span>
+            Riet: <span className="font-medium ml-1">{sunset}</span>
           </p>
           <p>|</p>
-
-          <UilTemperatureEmpty size={18} />
-          <p className="font-light">
-            dienas min:{" "}
-            <span className="font-medium ml-1">{weather.main.temp_min}</span>
-          </p>
-          <p>|</p>
-
-          <UilTemperature size={18} />
-          <p className="font-light">
-            dienas max:{" "}
-            <span className="font-medium ml-1">{weather.main.temp_max}</span>
-          </p>
         </div>
       </>
     );
