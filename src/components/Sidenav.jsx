@@ -16,13 +16,14 @@ const Sidenav = () => {
         <TbMenu2
           size={50}
           onClick={handleNav}
-          className="absolute top-4 right-4 z-[99] md:hidden hover:scale-110 ease-in duration-200"
+          className="fixed opacity-70 top-4 right-4 z-[99] md:hidden hover:scale-110 ease-in duration-200"
         />
       </div>
 
       {nav ? (
         <div className="fixed w-full h-screen bg-white/90 flex flex-col justify-center items-center z-20">
           <a
+            onClick={handleNav}
             href="#main"
             className="w-[50%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"
           >
@@ -47,19 +48,19 @@ const Sidenav = () => {
           </a>
           <a
             onClick={handleNav}
-            href="#laikapstakli"
-            className="w-[50%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"
-          >
-            <TiWeatherPartlySunny size={30} />
-            <span className="pl-4">Laikapstākļi</span>
-          </a>
-          <a
-            onClick={handleNav}
             href="#zives"
             className="w-[50%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"
           >
             <TbFish size={30} />
             <span className="pl-4">Zives</span>
+          </a>
+          <a
+            onClick={handleNav}
+            href="#laikapstakli"
+            className="w-[50%] flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"
+          >
+            <TiWeatherPartlySunny size={30} />
+            <span className="pl-4">Laikapstākļi</span>
           </a>
           <a
             onClick={handleNav}
@@ -94,16 +95,16 @@ const Sidenav = () => {
             <TbSpeedboat size={25} />
           </a>
           <a
-            href="#laikapstakli"
-            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
-          >
-            <TiWeatherPartlySunny size={23} />
-          </a>
-          <a
             href="#zives"
             className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
           >
             <TbFish size={23} />
+          </a>
+          <a
+            href="#laikapstakli"
+            className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-300"
+          >
+            <TiWeatherPartlySunny size={23} />
           </a>
           <a
             href="#kontakti"
